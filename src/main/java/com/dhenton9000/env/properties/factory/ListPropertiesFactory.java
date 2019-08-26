@@ -15,7 +15,19 @@ public class ListPropertiesFactory extends AbstractFactoryBean<Object> {
 
     @Override
     protected Object createInstance() throws Exception {
-
+     
+        
+        /* read env variables 
+        
+        
+        Map<String, String> env = System.getenv();
+        
+        
+        
+        */
+        
+        
+        
         Properties p = new Properties();
         //TODO use these guys to make an individual sync call to fill
         // the props object with values from a service, eg SSM
