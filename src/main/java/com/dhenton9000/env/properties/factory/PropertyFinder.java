@@ -5,11 +5,13 @@
  */
 package com.dhenton9000.env.properties.factory;
 
+import java.util.Properties;
+
 /**
  *
  * @author dhenton
  */
-public class PropertyFinder {
+public interface PropertyFinder {
     
-    
+    public Properties loadProperties();
 }

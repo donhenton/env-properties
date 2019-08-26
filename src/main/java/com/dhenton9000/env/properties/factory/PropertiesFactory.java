@@ -26,9 +26,7 @@ public class PropertiesFactory extends AbstractFactoryBean<Object> {
 
     @Override
     protected Object createInstance() throws Exception {
-        Properties t = new Properties();
-        t.setProperty("alpha", "get a job");
-        return t;
+       return finder.loadProperties();
     }
 
 }

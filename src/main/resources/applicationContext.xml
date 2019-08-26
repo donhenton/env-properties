@@ -12,15 +12,15 @@
 ">
     
     <!-- this is the code that will 'look up' the properties -->
-    <bean id="propertyFinder"  class="com.dhenton9000.env.properties.factory.PropertyFinder">
+    <bean id="demoPropertyFinder"  class="com.dhenton9000.env.properties.factory.impl.DemoPropertyFinder">
     
     </bean>
      
     
     <!--create the properties file via a factory    -->
-    <bean id="propertiesBean"  class="com.dhenton9000.env.properties.factory.PropertiesFactory">
+    <bean id="demoPropertiesBean"  class="com.dhenton9000.env.properties.factory.PropertiesFactory">
         <property name="propertyFinder">
-            <ref bean="propertyFinder" />
+            <ref bean="demoPropertyFinder" />
         </property>
          
     </bean>
@@ -29,17 +29,17 @@
     
     <!-- configure a placeholder that uses the properties object from the factory bean  -->
         
-    <bean id="property-placeholder"
+    <bean id="demo-property-placeholder"
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-<!--        <property name="placeholderPrefix" value="#(" />
-        <property name="placeholderSuffix" value=")" />-->
-        <property name="properties"  ref="propertiesBean" />
+        <property name="placeholderPrefix" value="#(" />
+        <property name="placeholderSuffix" value=")" /> 
+        <property name="properties"  ref="demoPropertiesBean" />
     </bean>
      
     
     <bean id="test-prop-reader" class="com.dhenton9000.env.properties.sample.PropertiesSample">
         <property name="message">
-            <value>${alpha}</value>
+            <value>#(alpha)</value>
         </property>
 
         

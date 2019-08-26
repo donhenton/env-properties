@@ -49,7 +49,7 @@ public class BasicTest {
            new ClassPathXmlApplicationContext("applicationContext.xml");
         PropertiesSample p = context.getBean("test-prop-reader",PropertiesSample.class);
         String test = p.getMessage();
-        assertEquals(test,MESSAGE);
+        assertEquals(test,"alpha property");
         
     }
    
