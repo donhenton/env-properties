@@ -11,23 +11,17 @@
           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
 ">
     
-    <!-- this is the code that will 'look up' the properties -->
-    <bean id="demoPropertyFinder"  class="com.dhenton9000.env.properties.factory.impl.DemoPropertyFinder">
-    
-    </bean>
+ 
      
     
     <!--create the properties file via a factory    -->
-    <bean id="demoPropertiesBean"  class="com.dhenton9000.env.properties.factory.PropertiesFactory">
-        <property name="propertyFinder">
-            <ref bean="demoPropertyFinder" />
-        </property>
-         
+    <bean id="demoPropertiesBean"  class="com.dhenton9000.env.properties.factory.DemoPropertiesFactory">
+        
     </bean>
   
     
     
-    <!-- configure a placeholder that uses the properties object from the factory bean  -->
+    <!-- configure a placeholder that uses the properties object from the factory bean and assigns it into #()  -->
         
     <bean id="demo-property-placeholder"
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">

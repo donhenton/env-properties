@@ -6,17 +6,10 @@ import java.util.Properties;
 import org.springframework.beans.factory.config.AbstractFactoryBean;
 
  
-public class PropertiesFactory extends AbstractFactoryBean<Object> {
+public class DemoPropertiesFactory extends AbstractFactoryBean<Object> {
 
-    private PropertyFinder finder;
-
-    public PropertyFinder getPropertyFinder() {
-        return finder;
-    }
     
-    public void setPropertyFinder(PropertyFinder finder) {
-        this.finder = finder;
-    }
+ 
     
     
     @Override
@@ -26,7 +19,9 @@ public class PropertiesFactory extends AbstractFactoryBean<Object> {
 
     @Override
     protected Object createInstance() throws Exception {
-       return finder.loadProperties();
+       Properties p = new Properties();
+       p.setProperty("alpha", "alpha property");
+       return p;
     }
 
 }
