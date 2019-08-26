@@ -9,9 +9,6 @@ import org.springframework.beans.factory.config.AbstractFactoryBean;
 public class DemoPropertiesFactory extends AbstractFactoryBean<Object> {
 
     
- 
-    
-    
     @Override
     public Class<?> getObjectType() {
         return Properties.class;

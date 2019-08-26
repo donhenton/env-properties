@@ -15,11 +15,19 @@
      
     
     <!--create the properties file via a factory    -->
+    <bean id="listPropertiesBean"  class="com.dhenton9000.env.properties.factory.ListPropertiesFactory">
+        <property name="propertyKeys">
+            <list>
+                <value>p1</value>
+                <value>p2</value>
+                <value>p3</value>
+            </list>
+        </property>
+    </bean>
+  
     <bean id="demoPropertiesBean"  class="com.dhenton9000.env.properties.factory.DemoPropertiesFactory">
         
     </bean>
-  
-    
     
     <!-- configure a placeholder that uses the properties object from the factory bean and assigns it into #()  -->
         
